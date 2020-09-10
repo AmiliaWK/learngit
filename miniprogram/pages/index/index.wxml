@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+  <!-- 查询全部 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doSelectAll">
+      <text>查询全部</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+
+  <!-- 查询一个 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doSelectOne">
+      <text>查询一个</text>
+    </view>
+  </view>
+
+  <!-- 新增商品 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doSelectOne">
+      <text>新增商品</text>
+    </view>
+  </view>
+
+  
+</view>
